@@ -1,0 +1,19 @@
+includes:
+- configs/image_base.yml
+
+model:
+  architectures:
+    potential:
+      type: mlp
+      hidden_dims: [256, 256, 256, 256]
+      activation: softplus100
+  # ode solver
+  ode_args:
+    method: dopri5
+    atol: 0.00001
+    rtol: 0.00001
+  monte_carlo_prior: uniform_cube
+
+optim:
+  lr_initial: 0.00001
+  lambda_minus: 2

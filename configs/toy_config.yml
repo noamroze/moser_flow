@@ -1,0 +1,40 @@
+dataset:
+  input_dim: 2
+  type: toy
+  name: 8gaussians
+  test_size: 10000
+  training_size: 50000
+  validation_size: 10000
+
+model:
+  manifold: torus
+  architectures:
+    potential:
+      activation: softplus100
+      hidden_dims:
+      - 256
+      - 256
+      - 256
+      type: mlp
+  ode_args:
+    atol: 0.0001
+    method: dopri5
+    rtol: 0.0001
+  prior: uniform_cube
+
+optim:
+  batch_size: 512
+  eval_batch_size: 512
+  eval_every: 100
+  lr_gamma: 0.1
+  lr_initial: 1.0e-05
+  max_epochs: 750
+  weight_decay: 0
+  lambda_minus: 2
+
+logger:
+- tensorboard
+- file
+
+early_stop:
+  patience: 7

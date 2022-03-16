@@ -1,0 +1,1 @@
+python main.py --mode train --config-yml ./configs/surface.yml --print-every 10 --identifier bunny --local_rank 0

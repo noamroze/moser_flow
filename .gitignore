@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+_experiments/
+logs/
+checkpoints/
+results/
+sweep_runs/
+exps/
+time_evals/
+data/earth_data/
+
+launch.json
+settings.json
+.idea

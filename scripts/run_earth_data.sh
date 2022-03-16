@@ -1,0 +1,1 @@
+python main.py --config-yml ./configs/earth.yml --mode train --print-every 10 --identifier earth_data_fire --local_rank 0

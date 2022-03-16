@@ -1,0 +1,1 @@
+python main.py --mode train --config-yml ./configs/image_ffjord.yml --print-every 1 --only_save_checkpoints --identifier bird_ffjord --local_rank 1

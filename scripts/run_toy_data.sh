@@ -1,0 +1,1 @@
+python main.py --mode train --config-yml ./configs/toy_config.yml --print-every 10 --identifier 8gaussians --local_rank 0

@@ -1,0 +1,31 @@
+dataset:
+  type: image
+  name: image
+  path: data/images/bird.jpg
+  input_dim: 2
+  training_size: 1000000
+  validation_size: 500000
+  test_size: 500000
+  std: 0
+
+model:
+  manifold: torus
+  n_fourier_features: 8
+  prior: uniform_cube
+
+optim:
+  batch_size: 10000
+  eval_batch_size: 10000
+  weight_decay: 0.0001
+  lr_gamma: 0.1
+  max_epochs: 5000
+  eval_every: -1
+  save_every: 1
+
+early_stop:
+  max_time: 5000
+  patience: 10000
+  
+logger: 
+  - tensorboard
+  - file

@@ -1,0 +1,30 @@
+includes:
+- configs/image_base.yml
+
+model:
+  name: ffjord
+  # architechture
+  dims: 256-256-256-256
+  num_blocks: 1
+  layer_type: concatsquash
+  nonlinearity: softplus100
+  # divergence calc
+  divergence_fn: brute_force
+  residual: False
+  rademacher: False  
+  # ode solving
+  solver: dopri5
+  atol: 0.0001
+  rtol: 0.0001
+  time_length: 0.5
+  train_T: True
+  step_size: null
+  test_solver: null
+  test_atol: null
+  test_rtol: null
+  # batchnorm
+  batch_norm: False
+  bn_lag: 0
+
+optim:
+  lr_initial: 0.0001

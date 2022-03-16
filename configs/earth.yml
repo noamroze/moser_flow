@@ -1,0 +1,41 @@
+dataset:
+  type: earth
+  name: fire
+  input_dim: 3
+  training_size: 0.7
+  validation_size: 0
+  test_size: 0.3
+
+model:
+  manifold: implicit
+  pde_type: divergence
+  architectures:
+    # potential net
+    potential:
+      type: mlp
+      hidden_dims: [512, 512, 512, 512, 512, 512]
+      activation: softplus100
+  # ode solver
+  ode_args:
+    method: dopri5
+    atol: 0.00001
+    rtol: 0.00001
+
+optim:
+  batch_size: 15000
+  mc_batch_scale: 10
+  eval_batch_size: 10000
+  weight_decay: 0
+  lr_initial: 0.0001
+  lr_gamma: 0.1
+  max_epochs: 30000
+  eval_every: 5000
+  lambda_minus: 100
+  test_on_best_val: False
+
+early_stop:
+  patience: 100000
+
+logger: 
+  - tensorboard
+  - file

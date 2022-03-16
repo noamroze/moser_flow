@@ -1,0 +1,4 @@
+python run_statistical_experiment.py --config-yml ./configs/earth.yml --mode train --print-every 100 --identifier earth_data_fire --config-override '{"dataset": {"name": "fire"}}' --local_rank 0 &
+python run_statistical_experiment.py --config-yml ./configs/earth.yml --mode train --print-every 100 --identifier earth_data_flood --config-override '{"dataset": {"name": "flood"}}' --local_rank 1 & 
+python run_statistical_experiment.py --config-yml ./configs/earth.yml --mode train --print-every 100 --identifier earth_data_volerup --config-override '{"dataset": {"name": "volerup"}}' --local_rank 2 & 
+python run_statistical_experiment.py --config-yml ./configs/earth.yml --mode train --print-every 100 --identifier earth_data_quakes --config-override '{"dataset": {"name": "quakes_all"}}' --local_rank 3 & 
